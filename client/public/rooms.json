@@ -1,0 +1,94 @@
+[
+  {
+    "location": "Pattaya, Thailand",
+    "category": "Beach",
+    "title": "A15 thebase Sky Pool 1 Bedroom 1/1/Downtown Direct Beach",
+    "to": "2024-05-21T18:00:00.000Z",
+    "from": "2024-05-19T18:00:00.000Z",
+    "price": "100",
+    "guests": "2",
+    "bathrooms": "1",
+    "bedrooms": "1",
+    "host": {
+      "name": "AB Murad",
+      "image": "https://i.ibb.co.com/H4bVt2Q/ab-murad.png",
+      "email": "abmurad@gmail.com"
+    },
+    "description": "Seamlessly evisculate frictionless e-markets through tactical interfaces. Holisticly visualize viral potentialities without mission-critical services.",
+    "image": "https://i.ibb.co/BsLQWH6/992ceffe-86d2-42b0-93b8-c24427806cca.webp",
+    "booked": false
+  },
+  {
+    "location": "Theog, India",
+    "category": "Countryside",
+    "title": "Deori Room 1BR Daafi w/Mountain View",
+    "to": "2024-05-30T18:00:00.000Z",
+    "from": "2024-05-27T18:00:00.000Z",
+    "price": "50",
+    "guests": "3",
+    "bathrooms": "2",
+    "bedrooms": "2",
+    "host": {
+      "name": "AB Murad",
+      "image": "https://i.ibb.co.com/H4bVt2Q/ab-murad.png",
+      "email": "abmurad@gmail.com"
+    },
+    "description": "Credibly incentivize stand-alone technology rather than unique convergence. Intrinsicly incentivize distinctive niche markets for.",
+    "image": "https://i.ibb.co/Ptxx4q2/15110762-267f-4a08-88ae-2d9d3603284d.webp",
+    "booked": false
+  },
+  {
+    "location": "Kamiminochi, Japan",
+    "category": "Desert",
+    "title": "Anoie home with a private sauna with spectacular views of Lake Nojiri",
+    "to": "2024-06-04T18:00:00.000Z",
+    "from": "2024-05-31T18:00:00.000Z",
+    "price": "140",
+    "guests": "4",
+    "bathrooms": "2",
+    "bedrooms": "2",
+    "host": {
+      "name": "John Doe",
+      "image": "https://i.ibb.co.com/6nYZmVD/user2.jpg",
+      "email": "johndoe@gmail.com"
+    },
+    "description": "Efficiently coordinate flexible synergy and backward-compatible content. Energistically brand market-driven e-tailers for business models.",
+    "image": "https://i.ibb.co/Gp0Svsb/b2c0f556-f726-4db8-985f-25a668369fe7.webp"
+  },
+  {
+    "location": "Boracay, Philippines",
+    "category": "Modern",
+    "title": "A tropical island paradise with white sand beaches, crystal-clear waters, and a thriving nightlife.",
+    "to": "2024-10-16T18:00:00.000Z",
+    "from": "2024-10-16T18:00:00.000Z",
+    "price": "120",
+    "guests": "4",
+    "bathrooms": "3",
+    "description": "Convenient and comfortable modern hotel in Johor Bahru City Center. Perfect for two travelers. Enjoy excellent breakfast, free shuttle to mall, 24-hour room service, and daily housekeeping.",
+    "bedrooms": "4",
+    "host": {
+      "name": "John Doe",
+      "image": "https://i.ibb.co.com/6nYZmVD/user2.jpg",
+      "email": "johndoe@gmail.com"
+    },
+    "image": "https://i.ibb.co.com/6Ybg2VY/images.png"
+  },
+  {
+    "location": "Johor Bahru City Center, Johor Bahru, Malaysia",
+    "category": "Beach",
+    "title": "OYO 90599 Villa De Rose",
+    "to": "2024-10-29T18:00:00.000Z",
+    "from": "2024-10-29T18:00:00.000Z",
+    "price": "300",
+    "guests": "5",
+    "bathrooms": "3",
+    "description": "Explore the bustling streets, diverse culinary scene, Legoland Malaysia, Angry Birds Activity Park, Johor Zoo, Sultan Abu Bakar State Mosque, and Hutan Bandar Recreational Park. Book now for a memorable experience at OYO 90599 Villa De Rose. ",
+    "bedrooms": "4",
+    "host": {
+      "name": "AB Murad",
+      "image": "https://i.ibb.co.com/H4bVt2Q/ab-murad.png",
+      "email": "abmurad@gmail.com"
+    },
+    "image": "https://i.ibb.co.com/P6bcLqQ/pexels-fotoaibe-1669799-kgf-ewgtfwegtitgett4-dffewfwef.jpg"
+  }
+]
