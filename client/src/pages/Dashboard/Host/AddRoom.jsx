@@ -1,12 +1,12 @@
 import { useState } from "react";
-import AddRoomForm from "../../../components/Form/AddRoomForm";
-import useAuth from "../../../hooks/useAuth";
-import { imageUpload } from "../../../api/utils";
+import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import useAuth from "../../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import { imageUpload } from "../../../api/utils";
 import { useMutation } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import AddRoomForm from "../../../components/Form/AddRoomForm";
 
 const AddRoom = () => {
   const navigate = useNavigate();
@@ -22,8 +22,8 @@ const AddRoom = () => {
     key: "selection",
   });
 
+  //Date range handler
   const handleDates = (item) => {
-    console.log(item);
     setDates(item.selection);
   };
 
@@ -94,7 +94,7 @@ const AddRoom = () => {
     }
   };
 
-  //handle image
+  //handle image change
   const handleImage = (image) => {
     setImagePreview(URL.createObjectURL(image));
     setImageText(image.name);

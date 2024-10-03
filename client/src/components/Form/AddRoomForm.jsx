@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { DateRange } from "react-date-range";
-import { categories } from "../Categories/CategoriesData";
 import { TbFidgetSpinner } from "react-icons/tb";
+import { categories } from "../Categories/CategoriesData";
 
 const AddRoomForm = ({
   dates,
