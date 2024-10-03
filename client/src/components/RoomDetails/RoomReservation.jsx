@@ -24,11 +24,15 @@ const RoomReservation = ({ room, refetch }) => {
 
   // total days * price
   const daysDifference = differenceInCalendarDays(
-    new Date(room.to),
-    new Date(room.from)
+    new Date(room.from),
+    new Date(room.to)
   );
+  console.log("daysDifference:", daysDifference);
+
   const totalPrice =
     (daysDifference === 0 ? 1 : daysDifference) * parseInt(room?.price);
+
+  console.log("totalPrice:", totalPrice);
 
   const closeModal = () => {
     setIsOpen(false);

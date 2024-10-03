@@ -50,7 +50,7 @@ const AddRoom = () => {
     const location = form.location.value;
     const category = form.category.value;
     const title = form.title.value;
-    const to = dates.endDate;
+    const to = dates.startDate;
     const from = dates.endDate;
     const price = form.price.value;
     const guests = form.total_guest.value;
@@ -64,6 +64,8 @@ const AddRoom = () => {
       image: user?.photoURL,
       email: user?.email,
     };
+
+    console.log();
 
     try {
       const image_url = await imageUpload(image);
@@ -82,7 +84,7 @@ const AddRoom = () => {
         host,
         image: image_url,
       };
-      console.table(roomData);
+      // console.table(roomData);
 
       await mutateAsync(roomData);
     } catch (err) {

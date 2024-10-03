@@ -117,6 +117,7 @@ const AddRoomForm = ({
                   id="price"
                   type="number"
                   placeholder="Price"
+                  min={1}
                   required
                 />
               </div>
