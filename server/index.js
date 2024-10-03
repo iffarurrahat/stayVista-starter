@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 const cookieParser = require("cookie-parser");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const jwt = require("jsonwebtoken");
@@ -19,6 +20,45 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(cookieParser());
+
+// send email
+const sendEmail = (emailAddress, emailData) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for port 465, false for other ports
+    auth: {
+      user: process.env.TRANSPORTER_EMAIL,
+      pass: process.env.TRANSPORTER_PASS,
+    },
+  });
+
+  // verify transporter
+  // verify connection configuration
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take our messages");
+    }
+  });
+
+  const mailBody = {
+    from: `"Stay Vista" <${process.env.TRANSPORTER_EMAIL}>`, // sender address
+    to: emailAddress, // list of receivers
+    subject: emailData.subject, // Subject line
+    html: emailData.message, // html body
+  };
+
+  transporter.sendMail(mailBody, (error, info) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email Sent: " + info.response);
+    }
+  });
+};
 
 // Verify Token Middleware
 const verifyToken = async (req, res, next) => {
@@ -162,6 +202,12 @@ async function run() {
       };
 
       const result = await usersCollection.updateOne(query, updateDoc, options);
+
+      // Welcome new user
+      sendEmail(user?.email, {
+        subject: "Welcome to Stayvista!",
+        message: `Hope you will find you destination.`,
+      });
       res.send(result);
     });
 
@@ -244,19 +290,20 @@ async function run() {
     //Save a booking data in db
     app.post("/booking", verifyToken, async (req, res) => {
       const bookingData = req.body;
-
       // save room booking info
       const result = await bookingsCollection.insertOne(bookingData);
 
-      // // change room availability status
-      // const roomId = bookingData?.roomId
-      // const query = {_id: new ObjectId(roomId)}
-      // const updateDoc = {
-      //   $set: {booked: true}
-      // }
-      // const updatedRoom = await roomsCollection.updateOne(query, updateDoc)
-      // console.log(updatedRoom);
-      // res.send({result, updatedRoom});
+      // send email to guest
+      sendEmail(bookingData?.guest?.email, {
+        subject: "Booking Successful",
+        message: `You have successfully booked a room through Stay Vista. Transaction Id: ${bookingData.transactionId}`,
+      });
+
+      // send email to guest
+      sendEmail(bookingData?.host?.email, {
+        subject: "Your room got booked!",
+        message: `Get ready to welcome ${bookingData.transactionId}`,
+      });
 
       res.send(result);
     });
