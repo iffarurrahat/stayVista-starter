@@ -60,6 +60,7 @@ const AddRoomForm = ({
                 onChange={(item) => handleDates(item)}
                 moveRangeOnFirstSelection={false}
                 ranges={[dates]}
+                minDate={new Date()}
               />
             </div>
           </div>
