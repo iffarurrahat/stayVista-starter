@@ -26,7 +26,6 @@ const Login = () => {
       await navigate("/");
       toast.success("Login Successful");
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
       setLoading(false);
     }
@@ -41,7 +40,6 @@ const Login = () => {
       toast.success("Request Success! Check you email for further process...");
       setLoading(false);
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
       setLoading(false);
     }
@@ -55,7 +53,6 @@ const Login = () => {
       navigate("/");
       toast.success("Login Successful");
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
     }
   };

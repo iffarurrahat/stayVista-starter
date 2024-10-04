@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const BookingDataRow = ({ booking, refetch }) => {
-  console.log(booking);
+  // console.log(booking);
 
   const axiosSecure = useAxiosSecure();
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ const BookingDataRow = ({ booking, refetch }) => {
       return data;
     },
     onSuccess: async (data) => {
-      console.log(data);
+      // console.log(data);
       refetch();
       toast.success("Booking Canceled!!");
 
@@ -39,7 +39,7 @@ const BookingDataRow = ({ booking, refetch }) => {
     try {
       await mutateAsync(id);
     } catch (err) {
-      console.log(err);
+      toast.error(err.message);
     }
   };
 

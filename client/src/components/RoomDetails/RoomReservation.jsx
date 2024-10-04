@@ -48,7 +48,7 @@ const RoomReservation = ({ room, refetch }) => {
           showDateDisplay={false}
           rangeColors={["#F6657E"]}
           onChange={(item) => {
-            console.log(item);
+            // console.log(item);
             setState([
               {
                 startDate: new Date(room.from),

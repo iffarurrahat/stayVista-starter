@@ -34,7 +34,7 @@ const AddRoom = () => {
       return data;
     },
     onSuccess: () => {
-      console.log("Data Saved Successfully");
+      // console.log("Data Saved Successfully");
       toast.success("Added Room Successfully!");
       navigate("/dashboard/my-listings");
       setLoading(false);
@@ -65,8 +65,6 @@ const AddRoom = () => {
       email: user?.email,
     };
 
-    console.log();
-
     try {
       const image_url = await imageUpload(image);
 
@@ -88,7 +86,7 @@ const AddRoom = () => {
 
       await mutateAsync(roomData);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setLoading(false);
       toast.error(err.message);
     }

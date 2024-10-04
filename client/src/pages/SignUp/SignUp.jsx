@@ -29,11 +29,11 @@ const SignUp = () => {
 
       //1. Upload image and get image url
       const image_url = await imageUpload(image);
-      console.log("signup:--->", image_url);
+      // console.log("signup:--->", image_url);
 
       //2. User Registration
       const result = await createUser(email, password);
-      console.log(result);
+      // console.log(result);
 
       //3. Save user name and photo in firebase
       await updateUserProfile(name, image_url);
@@ -41,7 +41,6 @@ const SignUp = () => {
       navigate("/");
       toast.success("Signup Successful");
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
     }
   };
@@ -54,7 +53,6 @@ const SignUp = () => {
       navigate("/");
       toast.success("Signup Successful");
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
     }
   };

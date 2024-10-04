@@ -67,7 +67,7 @@ const UpdateRoomModal = ({ setIsEditModalOpen, isOpen, room, refetch }) => {
       toast.success("Home info updated");
       setIsLoading(false);
 
-      console.log(data);
+      // console.log(data);
     } catch (err) {
       setIsLoading(false);
       toast.error(err.message);

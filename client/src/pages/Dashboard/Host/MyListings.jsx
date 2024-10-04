@@ -30,7 +30,7 @@ const MyListings = () => {
       return data;
     },
     onSuccess: (data) => {
-      console.log(data);
+      // console.log(data);
       refetch();
       toast.success("Successfully deleted.");
     },
@@ -41,7 +41,7 @@ const MyListings = () => {
     try {
       await mutateAsync(id);
     } catch (err) {
-      console.log(err);
+      toast.error(err.message);
     }
   };
 

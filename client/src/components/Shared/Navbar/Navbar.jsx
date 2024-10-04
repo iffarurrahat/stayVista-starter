@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   const modalHandler = async () => {
-    console.log("I want to be host");
+    // console.log("I want to be host");
 
     try {
       const currentUser = {
@@ -30,14 +30,14 @@ const Navbar = () => {
       };
 
       const { data } = await axiosSecure.put(`/user`, currentUser);
-      console.log(data);
+      // console.log(data);
       if (data.modifiedCount > 0) {
         toast.success("Success! Please with for admin confirmation!");
       } else {
         toast.success("Please!, With fo admin approval 👊");
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error(err.message);
     } finally {
       closeModal();
