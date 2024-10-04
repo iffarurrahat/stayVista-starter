@@ -63,13 +63,13 @@ const sendEmail = (emailAddress, emailData) => {
 // Verify Token Middleware
 const verifyToken = async (req, res, next) => {
   const token = req.cookies?.token;
-  console.log(token);
+  // console.log(token);
   if (!token) {
     return res.status(401).send({ message: "unauthorized access" });
   }
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
       return res.status(401).send({ message: "unauthorized access" });
     }
     req.user = decoded;
@@ -96,11 +96,10 @@ async function run() {
 
     //verify admin middleware
     const verifyAdmin = async (req, res, next) => {
-      console.log("hello");
       const user = req.user;
       const query = { email: user?.email };
       const result = await usersCollection.findOne(query);
-      console.log(result?.role);
+
       if (!result || result?.role !== "admin")
         return res.status(401).send({ message: "unauthorized access!!" });
 
@@ -109,11 +108,10 @@ async function run() {
 
     //verify host middleware
     const verifyHost = async (req, res, next) => {
-      console.log("hello");
       const user = req.user;
       const query = { email: user?.email };
       const result = await usersCollection.findOne(query);
-      console.log(result?.role);
+
       if (!result || result?.role !== "host")
         return res.status(401).send({ message: "unauthorized access!!" });
 
@@ -145,7 +143,6 @@ async function run() {
             sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
           })
           .send({ success: true });
-        console.log("Logout successful");
       } catch (err) {
         res.status(500).send(err);
       }
@@ -392,8 +389,6 @@ async function run() {
       chartArt.unshift(["Day", "Sales"]);
       // chartArt.splice(0, 0, ["Day", "Sales"]);
 
-      console.log(chartArt);
-
       res.send({
         totalUser,
         totalRooms,
@@ -433,8 +428,6 @@ async function run() {
       chartArt.unshift(["Day", "Sales"]);
       // chartArt.splice(0, 0, ["Day", "Sales"]);
 
-      console.log(chartArt);
-
       res.send({
         totalRooms,
         totalBookings: bookingDetails.length,
@@ -471,8 +464,6 @@ async function run() {
       chartArt.unshift(["Day", "Sales"]);
       // chartArt.splice(0, 0, ["Day", "Sales"]);
 
-      console.log(chartArt);
-
       res.send({
         totalBookings: bookingDetails.length,
         totalPrice,
@@ -482,7 +473,7 @@ async function run() {
     });
 
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
+    // await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
